@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pusat pelatihan, uji kompetensi, sertifikasi, asesor, UKK, TEFA, dan audit skill bidang kecantikan.">
+<title>LPK Beauty Competency Center</title>
+<style>
+:root{
+  --purple:#6d3bd1;
+  --purple2:#8b5cf6;
+  --deep:#24154f;
+  --ink:#17131f;
+  --muted:#716b7d;
+  --soft:#f7f3ff;
+  --line:#e9e1f7;
+  --white:#fff;
+  --green:#20a66a;
+  --shadow:0 18px 50px rgba(56,31,103,.12);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.5px}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--purple),#b58cff);display:grid;place-items:center;color:white;font-weight:900}
+.navlinks{display:flex;gap:28px;font-size:14px;color:#4f485b}
+.navlinks a:hover{color:var(--purple)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:12px;font-weight:750;font-size:14px;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--purple);color:white;box-shadow:0 10px 24px rgba(109,59,209,.25)}
+.btn-primary:hover{background:#5b2fc0}
+.btn-light{background:white;border-color:var(--line);color:var(--purple)}
+.menu{display:none;border:0;background:none;font-size:25px}
+
+.hero{background:linear-gradient(180deg,#fbf9ff 0%,#f5efff 100%);overflow:hidden}
+.hero-grid{min-height:620px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:35px;padding:55px 0 70px}
+.eyebrow{display:inline-flex;padding:8px 13px;border:1px solid #dfd2f8;border-radius:999px;color:var(--purple);font-size:12px;font-weight:800;letter-spacing:.3px;background:#fff}
+h1{font-size:clamp(44px,6vw,76px);line-height:.98;letter-spacing:-4px;margin:20px 0}
+.gradient{color:var(--purple)}
+.hero p{font-size:17px;line-height:1.65;color:var(--muted);max-width:590px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.proof{display:flex;align-items:center;gap:14px;margin-top:25px}
+.avatars{display:flex}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#d9c8ff,#fff);border:3px solid white;margin-left:-7px}
+.avatar:first-child{margin-left:0}
+.proof small{color:var(--muted);line-height:1.4}
+.hero-visual{position:relative;min-height:480px}
+.blob{position:absolute;inset:35px 30px 0 30px;border-radius:48% 52% 44% 56%;background:linear-gradient(145deg,#eadfff,#cdb7ff);transform:rotate(-7deg)}
+.model{position:absolute;right:7%;bottom:0;width:78%;height:88%;border-radius:45% 45% 0 0;background:linear-gradient(145deg,#fff,#e5d8fb);display:flex;align-items:end;justify-content:center;overflow:hidden;box-shadow:var(--shadow)}
+.model-inner{width:66%;height:82%;border-radius:45% 45% 12% 12%;background:linear-gradient(145deg,#8b5cf6,#4e299b);position:relative}
+.model-inner:before{content:"";position:absolute;width:38%;height:38%;border-radius:50%;background:#d8a27e;left:31%;top:-10%;box-shadow:0 -8px 0 8px #21172f}
+.model-inner:after{content:"";position:absolute;width:72%;height:42%;background:#fff;border-radius:50% 50% 0 0;left:14%;bottom:0}
+.float-card{position:absolute;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border:1px solid #eee7fa;border-radius:16px;padding:15px 17px;box-shadow:var(--shadow);min-width:155px}
+.float-card strong{display:block;font-size:20px}.float-card span{font-size:12px;color:var(--muted)}
+.c1{top:70px;right:0}.c2{top:205px;right:-18px}.c3{bottom:55px;left:0}
+
+.trust{background:white;border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);padding:30px 0}
+.stat{text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border:0}.stat strong{font-size:27px}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+
+section{padding:92px 0}
+.section-head{max-width:720px;margin-bottom:38px}
+.section-head h2{font-size:clamp(32px,4vw,50px);line-height:1.05;letter-spacing:-2px;margin:10px 0}
+.section-head p{color:var(--muted);line-height:1.7}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:white;transition:.25s;box-shadow:0 8px 30px rgba(44,23,82,.04)}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.icon{width:48px;height:48px;border-radius:15px;background:var(--soft);display:grid;place-items:center;color:var(--purple);font-size:22px;margin-bottom:22px}
+.card h3{margin:0 0 9px;font-size:19px}.card p{color:var(--muted);line-height:1.65;font-size:14px}.link{color:var(--purple);font-weight:750;font-size:13px}
+
+.journey{background:var(--soft)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.step{position:relative;text-align:center;padding:10px 18px}
+.step:not(:last-child):after{content:"→";position:absolute;right:-8px;top:18px;color:#b8a3df;font-size:22px}
+.num{width:52px;height:52px;border-radius:50%;background:white;border:1px solid #dfd2f8;color:var(--purple);display:grid;place-items:center;font-weight:900;margin:0 auto 16px}
+.step h4{margin:0 0 6px}.step p{font-size:13px;color:var(--muted);line-height:1.5}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.panel{background:linear-gradient(145deg,#2b195c,#6d3bd1);color:white;border-radius:32px;padding:42px;box-shadow:var(--shadow);min-height:430px;position:relative;overflow:hidden}
+.panel:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-100px;bottom:-100px}
+.panel h3{font-size:36px;line-height:1.1;margin:0 0 15px}.panel p{color:#ded5f0;line-height:1.7}
+.checks{display:grid;gap:13px;margin:25px 0}.check{display:flex;gap:10px;align-items:center;font-size:14px}
+.check i{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font-style:normal}
+.list{display:grid;gap:15px}.list-item{display:flex;gap:15px;padding:18px;border:1px solid var(--line);border-radius:18px}.list-item .icon{margin:0;flex:none}.list-item h4{margin:0 0 5px}.list-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+.programs{background:#fbfaff}
+.program-card{overflow:hidden;padding:0}.program-img{height:180px;background:linear-gradient(135deg,#e6d8ff,#c7adff);position:relative}.program-img span{position:absolute;left:16px;top:16px;background:white;padding:7px 10px;border-radius:999px;font-size:11px;font-weight:800;color:var(--purple)}.program-body{padding:24px}
+
+.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:190px 190px;gap:14px}
+.g{border-radius:22px;background:linear-gradient(135deg,#e9ddff,#c7b1ef);display:flex;align-items:end;padding:20px;color:#25133f;font-weight:800;overflow:hidden}
+.g:first-child{grid-row:span 2;background:linear-gradient(145deg,#d6c0ff,#8d62d5);color:white}
+.g:nth-child(2){background:linear-gradient(145deg,#f2eaff,#d5c1ff)}
+.g:nth-child(3){background:linear-gradient(145deg,#eee5ff,#c5a8ed)}
+
+.cta{background:linear-gradient(135deg,#27134f,#6d3bd1);color:white;border-radius:34px;padding:55px;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:44px;letter-spacing:-2px;margin:0 0 10px}.cta p{color:#ded5f0;margin:0;max-width:620px;line-height:1.6}
+
+footer{background:#171021;color:white;padding:55px 0 30px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px}.footer-brand p{color:#aaa0b8;line-height:1.6;max-width:350px}.footer h4{margin-top:0}.footer a,.footer span{display:block;color:#aaa0b8;margin:10px 0;font-size:14px}.copy{border-top:1px solid #30283a;margin-top:40px;padding-top:20px;color:#7e7589;font-size:12px}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:20;background:var(--green);color:white;border-radius:999px;padding:14px 19px;font-weight:800;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+
+@media(max-width:850px){
+ .navlinks,.nav>.btn{display:none}.menu{display:block}
+ .hero-grid,.split{grid-template-columns:1fr}.hero-grid{padding-top:35px}.hero-visual{min-height:420px}
+ .stats{grid-template-columns:repeat(2,1fr);gap:20px}.stat:nth-child(2){border:0}.stat:nth-child(-n+2){padding-bottom:18px;border-bottom:1px solid var(--line)}
+ .cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.step{padding:15px}.step:not(:last-child):after{content:"↓";right:auto;top:auto;bottom:-13px;left:50%}
+ .gallery{grid-template-columns:1fr 1fr;grid-template-rows:170px 170px 170px}.g:first-child{grid-row:span 2}
+ .footer-grid{grid-template-columns:1fr 1fr}.cta{padding:35px;display:block}.cta .btn{margin-top:25px}
+}
+@media(max-width:560px){
+ h1{letter-spacing:-2.5px}.cards{grid-template-columns:1fr}.hero-visual{min-height:350px}.model{width:82%;right:4%}.c2{right:-5px}.c1{right:0}.c3{left:-5px}
+ .gallery{grid-template-columns:1fr;grid-template-rows:180px 150px 150px 150px}.g:first-child{grid-row:span 1}
+ .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <nav class="nav">
+      <a class="logo" href="#"><span class="logo-mark">L</span><span>LPK BEAUTY<br><small style="font-weight:600;color:#81788e">COMPETENCY CENTER</small></span></a>
+      <div class="navlinks">
+        <a href="#program">Program</a><a href="#layanan">Layanan</a><a href="#sekolah">Sekolah</a><a href="#fasilitas">Fasilitas</a><a href="#tentang">Tentang</a>
+      </div>
+      <a class="btn btn-primary" href="#kontak">Daftar Sekarang →</a>
+      <button class="menu" aria-label="Menu">☰</button>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">PUSAT PELATIHAN • ASESMEN • SERTIFIKASI</span>
+        <h1>Master Your <span class="gradient">Beauty Skills.</span><br>Build Your Future.</h1>
+        <p>Pusat pelatihan dan pengembangan kompetensi kecantikan untuk individu, sekolah, dan industri — dari training, uji kompetensi, jasa asesor, UKK, TEFA hingga audit skill.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#program">Lihat Program →</a>
+          <a class="btn btn-light" href="#kontak">Konsultasi WhatsApp</a>
+        </div>
+        <div class="proof">
+          <div class="avatars"><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span><span class="avatar"></span></div>
+          <small><b>Dipercaya untuk pengembangan kompetensi</b><br>peserta, sekolah & mitra industri.</small>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="blob"></div>
+        <div class="model"><div class="model-inner"></div></div>
+        <div class="float-card c1"><strong>Training</strong><span>Berbasis praktik</span></div>
+        <div class="float-card c2"><strong>Assessment</strong><span>Ukur kompetensi</span></div>
+        <div class="float-card c3"><strong>Certification</strong><span>Siap menuju industri</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="container stats">
+    <div class="stat"><strong>01</strong><span>Training</span></div>
+    <div class="stat"><strong>02</strong><span>Assessment</span></div>
+    <div class="stat"><strong>03</strong><span>Certification</span></div>
+    <div class="stat"><strong>04</strong><span>Industry Ready</span></div>
+  </div>
+</div>
+
+<section id="program">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">PROGRAM & LAYANAN</span>
+      <h2>Everything you need to build real competence.</h2>
+      <p>Mulai dari belajar, praktik, mengukur kemampuan, sampai menyiapkan kompetensi untuk dunia kerja.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">✦</div><h3>Pelatihan Kecantikan</h3><p>Program beauty, makeup, hair, treatment, spa dan kompetensi lainnya dengan fokus pada praktik.</p><a class="link" href="#kontak">Lihat program →</a></article>
+      <article class="card"><div class="icon">✓</div><h3>Uji Kompetensi</h3><p>Persiapan dan pelaksanaan assessment untuk membantu peserta membuktikan kompetensinya.</p><a class="link" href="#kontak">Tanya jadwal →</a></article>
+      <article class="card"><div class="icon">★</div><h3>Sertifikasi</h3><p>Program persiapan menuju sertifikasi sesuai skema dan lembaga sertifikasi yang tersedia.</p><a class="link" href="#kontak">Pelajari →</a></article>
+      <article class="card"><div class="icon">♙</div><h3>Jasa Asesor</h3><p>Dukungan asesor untuk sekolah, lembaga pendidikan dan kebutuhan assessment kompetensi.</p><a class="link" href="#sekolah">Untuk institusi →</a></article>
+      <article class="card"><div class="icon">⌂</div><h3>Tempat UKK</h3><p>Fasilitas dan dukungan pelaksanaan UKK untuk satuan pendidikan sesuai kebutuhan program.</p><a class="link" href="#sekolah">Informasi UKK →</a></article>
+      <article class="card"><div class="icon">⚙</div><h3>TEFA & Skill Audit</h3><p>Pengembangan pembelajaran berbasis industri dan pemetaan gap kompetensi siswa atau tenaga kerja.</p><a class="link" href="#layanan">Pelajari layanan →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="journey">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">LEARNING JOURNEY</span>
+      <h2>From learning to industry.</h2>
+      <p>Ekosistem kompetensi yang dirancang agar peserta tidak berhenti pada teori.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h4>Learn</h4><p>Pelajari dasar dan teknik.</p></div>
+      <div class="step"><div class="num">02</div><h4>Practice</h4><p>Latihan dengan instruktur.</p></div>
+      <div class="step"><div class="num">03</div><h4>Assessment</h4><p>Ukur kemampuan nyata.</p></div>
+      <div class="step"><div class="num">04</div><h4>Certification</h4><p>Siapkan proses sertifikasi.</p></div>
+      <div class="step"><div class="num">05</div><h4>Industry</h4><p>Siap bekerja atau berkembang.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="layanan">
+  <div class="container split">
+    <div class="panel">
+      <span class="eyebrow" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:white">SKILL AUDIT</span>
+      <h3>How competent are your students?</h3>
+      <p>Jangan hanya melihat nilai atau sertifikat. Audit skill membantu memetakan kemampuan aktual, gap kompetensi, dan kebutuhan pengembangan.</p>
+      <div class="checks">
+        <div class="check"><i>✓</i> Competency mapping</div>
+        <div class="check"><i>✓</i> Skill gap analysis</div>
+        <div class="check"><i>✓</i> Training recommendation</div>
+        <div class="check"><i>✓</i> Re-assessment</div>
+      </div>
+      <a class="btn" style="background:white;color:var(--purple)" href="#kontak">Request Skill Audit →</a>
+    </div>
+    <div>
+      <div class="section-head"><span class="eyebrow">UNTUK SEKOLAH & INDUSTRI</span><h2>Satu partner untuk pengembangan kompetensi.</h2><p>Kami membantu institusi menghubungkan pembelajaran dengan standar kompetensi dan kebutuhan dunia kerja.</p></div>
+      <div class="list">
+        <div class="list-item"><div class="icon">🏫</div><div><h4>Solusi Sekolah</h4><p>UKK, asesor, training, workshop, TEFA dan audit skill siswa.</p></div></div>
+        <div class="list-item"><div class="icon">🏭</div><div><h4>Solusi Industri</h4><p>Corporate training, assessment, upskilling, reskilling dan competency mapping.</p></div></div>
+        <div class="list-item"><div class="icon">🤝</div><div><h4>Kemitraan</h4><p>Bangun program bersama untuk kebutuhan pendidikan dan industri.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sekolah" class="programs">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">PROGRAM UNGGULAN</span>
+      <h2>Choose the right program for your goal.</h2>
+      <p>Contoh struktur program. Detail nama, harga, jadwal dan skema dapat Anda ubah kapan saja.</p>
+    </div>
+    <div class="cards">
+      <article class="card program-card"><div class="program-img"><span>POPULAR</span></div><div class="program-body"><h3>Beauty Makeup Professional</h3><p>Basic hingga intermediate dengan fokus praktik.</p><a class="link" href="#kontak">Daftar / Konsultasi →</a></div></article>
+      <article class="card program-card"><div class="program-img"><span>SKILL</span></div><div class="program-body"><h3>Hair Styling & Beauty</h3><p>Pengembangan teknik hair dan layanan kecantikan.</p><a class="link" href="#kontak">Lihat program →</a></div></article>
+      <article class="card program-card"><div class="program-img"><span>INSTITUSI</span></div><div class="program-body"><h3>UKK, TEFA & School Program</h3><p>Solusi kolaborasi untuk sekolah dan lembaga pendidikan.</p><a class="link" href="#kontak">Ajukan kerja sama →</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="fasilitas">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">FASILITAS & DOKUMENTASI</span><h2>Learn in a space built for practice.</h2><p>Ganti kotak visual berikut dengan foto asli fasilitas LPK Anda.</p></div>
+    <div class="gallery">
+      <div class="g">Beauty Lab</div><div class="g">Makeup Studio</div><div class="g">Hair Studio</div><div class="g">Assessment Room</div><div class="g">Training Activity</div>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <div class="container">
+    <div class="cta">
+      <div><h2>Ready to upgrade your skills?</h2><p>Hubungi tim kami untuk mendapatkan informasi program, jadwal training, UKK, asesor, TEFA, sertifikasi atau skill audit.</p></div>
+      <a class="btn" style="background:white;color:var(--purple)" href="#kontak">Mulai Konsultasi →</a>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo"><span class="logo-mark">L</span><span>LPK BEAUTY<br><small style="font-weight:600;color:#aaa0b8">COMPETENCY CENTER</small></span></div><p>Pusat pelatihan, asesmen dan pengembangan kompetensi kecantikan untuk individu, sekolah dan industri.</p></div>
+      <div><h4>Program</h4><a href="#program">Pelatihan</a><a href="#program">Uji Kompetensi</a><a href="#program">Sertifikasi</a></div>
+      <div><h4>Layanan</h4><a href="#layanan">Jasa Asesor</a><a href="#sekolah">UKK</a><a href="#layanan">TEFA</a><a href="#layanan">Skill Audit</a></div>
+      <div><h4>Kontak</h4><span>WhatsApp: 08XX-XXXX-XXXX</span><span>Email: info@lpkanda.id</span><span>Alamat: Kota Anda, Indonesia</span></div>
+    </div>
+    <div class="copy">© 2026 LPK Beauty Competency Center. Semua hak dilindungi.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/6280000000000?text=Halo%20saya%20ingin%20informasi%20program%20LPK" target="_blank" rel="noopener">💬 WhatsApp</a>
+
+</body>
+  </html>
+  
